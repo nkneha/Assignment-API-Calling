@@ -15,7 +15,7 @@ import java.net.URL;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        String urlString = "https://api.chucknorris.io/jokes/random";
+        String urlString = "https://api.zippopotam.us/us/33162";
         URL url=null;
         HttpURLConnection connection=null;
         int connectionCode=0;
@@ -46,7 +46,11 @@ public class Main {
             in.close();
 
             JSONObject APIJsonResponse = new JSONObject(APIData.toString());
-            System.out.println(APIJsonResponse.get("value"));
+            System.out.println(APIJsonResponse.get("post code"));
+            System.out.println(APIJsonResponse.get("country"));
+            System.out.println(APIJsonResponse.get("country abbreviation"));
+            System.out.println(APIJsonResponse.get("places"));
+//            System.out.println(APIJsonResponse);
         }
         else{
             System.out.println("API call could not be complete");
